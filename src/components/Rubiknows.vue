@@ -238,7 +238,7 @@ html {
 
             <!-- Image -->
             <div class="md:w-1/2">
-                <img :src="pic" alt="Construction Work"
+                <img src="https://i.pinimg.com/736x/0b/9c/5e/0b9c5eecc4df2eb1ed1db6aec9537a53.jpg" alt="Construction Work"
                     class="w-full max-w-lg mx-auto rounded-3xl shadow-2xl transition duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)]" />
             </div>
 

@@ -11,8 +11,7 @@ export default {
             animateServices: false,
             animateProjects: false,
             animateContact: false,
-            img: '../public/logo.png',
-            pic: '../public/pic.png'
+            img: '../logo.png',
         };
     },
     mounted() {

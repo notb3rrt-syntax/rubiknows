@@ -164,7 +164,8 @@ html {
         </div>
         <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/90"></div>
 
-        <img :src="img" alt="" class="h-50 absolute top-0 ml-160 " />
+       <img :src="img" alt=""
+    class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 md:w-48 lg:w-56 opacity-80 pointer-events-none" />
         <div class="relative max-w-7xl mx-auto px-6 py-28 md:py-40 text-center mt-10">
             <p ref="heroLabel" id="hero-label"
                 :class="animateHeroLabel ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'"

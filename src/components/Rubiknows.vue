@@ -246,7 +246,7 @@ html {
 
             <!-- Logo / Brand -->
             <div class="cursor-pointer text-white font-bold text-xl tracking-widest uppercase">
-                Rubiknows
+                Rubi<span class="text-orange-600 text-2xl">knows</span>
             </div>
 
             <!-- Desktop Menu -->

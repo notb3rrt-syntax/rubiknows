@@ -468,13 +468,13 @@ html {
 
                     <!-- Primary -->
                     <button
-                        class="bg-orange-500 text-black font-semibold px-8 py-3 rounded-md hover:bg-orange-600 transition duration-300">
+                        class="cursor-pointer bg-orange-500 text-black font-semibold px-8 py-3 rounded-md hover:bg-orange-600 transition duration-300">
                         Learn More
                     </button>
 
                     <!-- Minimal Secondary -->
                     <button
-                        class="text-orange-500 font-semibold px-8 py-3 rounded-md border border-orange-500 hover:bg-orange-500 hover:text-black transition duration-300">
+                        class=" cursor-pointer text-orange-500 font-semibold px-8 py-3 rounded-md border border-orange-500 hover:bg-orange-500 hover:text-black transition duration-300">
                         Request Quote
                     </button>
 
@@ -510,7 +510,7 @@ html {
 
                 <!-- CARD 1 -->
                 <div
-                    class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                    class=" cursor-pointer bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
                     <div class="w-12 h-12 text-orange-500 mb-6">
                         <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                             <path d="M3 21h18M5 21V7l7-4 7 4v14" />
@@ -522,7 +522,7 @@ html {
 
                 <!-- CARD 2 -->
                 <div
-                    class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                    class=" cursor-pointer bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
                     <div class="w-12 h-12 text-orange-500 mb-6">
                         <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                             <path d="M14.7 6.3l3 3m-9.4 9.4l9.4-9.4M3 21h6" />
@@ -534,7 +534,7 @@ html {
 
                 <!-- CARD 3 -->
                 <div
-                    class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                    class=" cursor-pointer bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
                     <div class="w-12 h-12 text-orange-500 mb-6">
                         <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                             <path d="M3 3h18v18H3z" />
@@ -548,7 +548,7 @@ html {
                 <template v-if="showMore">
 
                     <div
-                        class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                        class=" cursor-pointer bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
                         <div class="w-12 h-12 text-orange-500 mb-6">
                             <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                                 <path d="M12 8v8m-4-4h8" />
@@ -559,7 +559,7 @@ html {
                     </div>
 
                     <div
-                        class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                        class=" cursor-pointer bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
                         <div class="w-12 h-12 text-orange-500 mb-6">
                             <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                                 <path d="M12 2l4 8H8l4-8z" />
@@ -569,8 +569,8 @@ html {
                         <p class="text-gray-400 text-sm">Green construction and energy-efficient solutions.</p>
                     </div>
 
-                    <div
-                        class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                    <div 
+                        class=" cursor-pointer bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
                         <div class="w-12 h-12 text-orange-500 mb-6">
                             <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                                 <path d="M9 17v-6h6v6" />
@@ -755,7 +755,7 @@ html {
 
                 <div class="text-center">
                     <button type="submit"
-                        class="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-full shadow-md transition duration-300 hover:scale-105">
+                        class=" cursor-pointer bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-full shadow-md transition duration-300 hover:scale-105">
                         Send Message
                     </button>
                 </div>

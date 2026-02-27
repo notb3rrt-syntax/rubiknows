@@ -13,6 +13,47 @@ export default {
             animateContact: false,
             img: '../logo.png',
             maam: '../maam.png',
+            showMore: false,
+            showMore: false,
+            projects: [
+                {
+                    title: "Commercial Building",
+                    description: "A modern office complex built with precision and high-quality materials.",
+                    image: "https://i.pinimg.com/736x/cd/43/59/cd4359eb5b895ce4cda433d55de3d608.jpg",
+                    iconPath: "M3 21h18M5 21V7l7-4 7 4v14" // minimalist building icon
+                },
+                {
+                    title: "Residential Complex",
+                    description: "Sustainable residential project designed for comfort and safety.",
+                    image: "https://i.pinimg.com/1200x/2b/a9/95/2ba995140fe081b838357573ca1232b4.jpg",
+                    iconPath: "M12 2l4 8H8l4-8z" // roof icon
+                },
+                {
+                    title: "Industrial Facility",
+                    description: "Large-scale industrial building built with robust engineering standards.",
+                    image: "https://i.pinimg.com/1200x/30/0b/95/300b9516d1f7344d100fe03aba3d2859.jpg",
+                    iconPath: "M5 13l4 4L19 7" // check mark icon
+                },
+                {
+                    title: "Bridge Construction",
+                    description: "Engineering precision for large-scale infrastructure projects.",
+                    image: "https://i.pinimg.com/736x/3d/c9/c3/3dc9c31e1703ac5a10a04f740203f6ec.jpg",
+                    iconPath: "M13 3v10h8"
+                },
+                {
+                    title: "Skyscraper",
+                    description: "Modern high-rise buildings with innovative design solutions.",
+                    image: "https://i.pinimg.com/1200x/1d/1c/08/1d1c0847c6988acf6b965535398c4f00.jpg",
+                    iconPath: "M3 3h18v18H3z"
+                },
+                {
+                    title: "Warehouse Facility",
+                    description: "Efficient industrial spaces built with safety and durability in mind.",
+                    image: "https://i.pinimg.com/1200x/44/f3/27/44f327b88768402be361969f9e50c603.jpg",
+                    iconPath: "M12 4v16"
+                }
+            ]
+
         };
     },
     mounted() {
@@ -60,8 +101,15 @@ export default {
         observer.observe(this.$refs.servicesSection);
         observer.observe(this.$refs.projectsSection);
         observer.observe(this.$refs.contactSection);
+    },
+
+    methods: {
+        toggleProjects() {
+            this.showMore = !this.showMore;
+        }
     }
-};
+}
+
 </script>
 
 <style>
@@ -123,56 +171,62 @@ html {
 
 <template>
     <!-- ================= NAVBAR ================= -->
-    <header class="fixed w-full top-0 z-50 backdrop-blur-lg bg-black/60 border-b border-orange-500/20 shadow-lg">
+    <header class="fixed w-full top-0 z-50 backdrop-blur-md bg-gray-950/50 border-b border-gray-700 shadow-lg">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
             <!-- Logo / Brand -->
-            <div class="cursor-pointer text-white font-bold text-lg tracking-wide">
+            <div class="cursor-pointer text-white font-bold text-xl tracking-widest uppercase">
                 Rubiknows
             </div>
 
             <!-- Desktop Menu -->
             <ul class="hidden md:flex items-center space-x-10 text-gray-300 font-medium">
-                <li><a href="#hero" class="cursor-pointer relative group hover:text-orange-500 transition duration-300">
+                <li>
+                    <a href="#hero" class="relative group hover:text-orange-400 transition duration-300">
                         Home
                         <span
-                            class="cursor-pointer absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
-                    </a></li>
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
 
-                <li><a href="#about"
-                        class="cursor-pointer relative group hover:text-orange-500 transition duration-300">
+                <li>
+                    <a href="#about" class="relative group hover:text-orange-400 transition duration-300">
                         About
                         <span
-                            class="cursor-pointer absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
-                    </a></li>
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
 
-                <li><a href="#services"
-                        class="cursor-pointer relative group hover:text-orange-500 transition duration-300">
+                <li>
+                    <a href="#services" class="relative group hover:text-orange-400 transition duration-300">
                         Services
                         <span
-                            class="cursor-pointer absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
-                    </a></li>
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
 
-                <li><a href="#projects"
-                        class="cursor-pointer relative group hover:text-orange-500 transition duration-300">
+                <li>
+                    <a href="#projects" class="relative group hover:text-orange-400 transition duration-300">
                         Projects
                         <span
-                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
-                    </a></li>
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
 
-                <li><a href="#contact" class="relative group hover:text-orange-500 transition duration-300">
+                <li>
+                    <a href="#contact" class="relative group hover:text-orange-400 transition duration-300">
                         Contact
                         <span
-                            class="cursor-pointer absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
-                    </a></li>
+                            class="absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
             </ul>
 
-            <!-- Modern CTA -->
+            <!-- Professional White CTA -->
             <div class="hidden md:block">
                 <button
-                    class="cursor-pointer relative overflow-hidden bg-orange-500 text-black font-semibold px-7 py-2.5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(249,115,22,0.6)]">
-                    <span class="relative z-10">Get a Free Quote</span>
-                    <span class="absolute inset-0 bg-orange-400 opacity-0 hover:opacity-20 transition"></span>
+                    class="bg-white text-gray-900 font-semibold px-7 py-2.5 rounded-md border border-gray-300 hover:bg-gray-100 transition duration-300 shadow-md hover:shadow-lg">
+                    Get a Free Quote
                 </button>
             </div>
 
@@ -187,20 +241,20 @@ html {
         </nav>
 
         <!-- Mobile Menu -->
-        <div v-if="isOpen"
-            class="md:hidden backdrop-blur-lg bg-black/80 border-t border-orange-500/20 px-6 py-6 space-y-6 text-gray-300 animate-fadeIn">
-            <a href="#hero" class="cursor-pointer block hover:text-orange-500 transition">Home</a>
-            <a href="#about" class="cursor-pointer block hover:text-orange-500 transition">About</a>
-            <a href="#services" class="cursor-pointer block hover:text-orange-500 transition">Services</a>
-            <a href="#projects" class="block hover:text-orange-500 transition">Projects</a>
-            <a href="#contact" class="cursor-pointer block hover:text-orange-500 transition">Contact</a>
+        <div v-if="isOpen" class="md:hidden bg-gray-950 border-t border-gray-700 px-6 py-6 space-y-6 text-gray-300">
+            <a href="#hero" class="block hover:text-orange-400 transition">Home</a>
+            <a href="#about" class="block hover:text-orange-400 transition">About</a>
+            <a href="#services" class="block hover:text-orange-400 transition">Services</a>
+            <a href="#projects" class="block hover:text-orange-400 transition">Projects</a>
+            <a href="#contact" class="block hover:text-orange-400 transition">Contact</a>
 
             <button
-                class="w-full bg-orange-500 hover:bg-orange-600 text-black font-semibold px-5 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(249,115,22,0.6)]">
+                class="w-full bg-white text-gray-900 font-semibold px-5 py-3 rounded-md border border-gray-300 hover:bg-gray-100 transition duration-300 shadow-md">
                 Start Your Project
             </button>
         </div>
     </header>
+
     <div class="h-20"></div>
 
     <!-- ================= HERO ================= -->
@@ -235,35 +289,21 @@ html {
                 and unmatched expertise.
             </p>
 
-            <div ref="heroButtons" id="hero-buttons"
-                :class="animateHeroButtons ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'"
-                class="flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-600">
-                <button
-                    class="cursor-pointer bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-md transition duration-300">
-                    Get Free Consultation
-                </button>
-                <button
-                    class="cursor-pointer border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black font-semibold px-8 py-3 rounded-md transition duration-300">
-                    View Our Projects
-                </button>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-center">
+                <a href="#contact"
+                    class="px-8 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold shadow-md transition duration-300">
+                    Get in Touch
+                </a>
+
+                <a href="#projects"
+                    class="px-8 py-3 rounded-lg border border-gray-600 text-gray-300 hover:bg-white/5 transition duration-300">
+                    View Projects
+                </a>
             </div>
+
 
             <!-- Google Map Embed -->
-            <div
-                class="max-w-lg mx-auto bg-white/5 backdrop-blur-lg border border-orange-500/30 rounded-2xl p-6 shadow-xl mt-10">
 
-                <h2 class="text-xl font-semibold mb-4 text-orange-500">
-                    Our Location:
-                </h2>
-
-                <div class="w-full h-56 rounded-xl overflow-hidden border border-orange-500/40 ">
-                    <iframe class="w-full h-full"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.540561827117!2d125.8169435!3d7.4508667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f953b3b7d922c3%3A0x21927934c5a5b49c!2sRUBIKNOWS%20Engineering%20and%20Construction!5e0!3m2!1sen!2sph!4v1708959912345!5m2!1sen!2sph"
-                        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-
-            </div>
         </div>
     </section>
 
@@ -271,11 +311,11 @@ html {
     <section id="about" class="relative bg-black text-white py-28 overflow-hidden">
 
         <!-- Subtle Construction Grid Background -->
-        <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg"
+        <svg class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice">
             <defs>
                 <pattern id="constructionGrid" width="60" height="60" patternUnits="userSpaceOnUse">
-                    <path d="M60 0 L0 0 0 60" fill="none" stroke="#FFA500" stroke-width="0.5" />
+                    <path d="M60 0 L0 0 0 60" fill="none" stroke="#f97316" stroke-width="0.6" />
                 </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#constructionGrid)" />
@@ -287,31 +327,31 @@ html {
             <div class="md:w-1/2">
                 <img src="https://i.pinimg.com/736x/0b/9c/5e/0b9c5eecc4df2eb1ed1db6aec9537a53.jpg"
                     alt="Construction Work"
-                    class="w-full max-w-lg mx-auto rounded-3xl shadow-2xl transition duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)]" />
+                    class="w-full max-w-lg mx-auto rounded-2xl shadow-xl transition duration-500 hover:scale-105" />
             </div>
 
             <!-- Text Content -->
-            <div
-                class="md:w-1/2 bg-white/5 backdrop-blur-lg border border-orange-500/20 rounded-3xl p-8 md:p-12 space-y-8 shadow-xl">
+            <div class="md:w-1/2 bg-white/5 backdrop-blur-md rounded-2xl p-8 md:p-12 space-y-8">
 
-                <h2 class="text-3xl md:text-4xl font-extrabold text-orange-500">
+                <h2 class="text-3xl md:text-4xl font-bold text-orange-500">
                     About Rubiknows Engineering & Construction
                 </h2>
 
                 <p class="text-gray-300 text-lg leading-relaxed">
-                    For over a decade, Rubiknows Engineering & Construction has delivered
-                    world-class engineering and infrastructure solutions. Our team combines
-                    deep technical expertise, innovative thinking, and uncompromising
-                    safety standards to bring every project to life.
+                    For over a decade, we have delivered high-performance engineering
+                    and infrastructure solutions through technical precision,
+                    innovation, and strict safety standards.
                 </p>
 
                 <!-- Highlights -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
+                    <!-- Item -->
                     <div class="flex items-start gap-4">
-                        <div
-                            class="w-8 h-8 flex items-center justify-center rounded-full bg-orange-500/20 text-orange-500">
-                            ✓
+                        <div class="w-6 h-6 text-orange-500">
+                            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path d="M3 21h18M5 21V7l7-4 7 4v14" />
+                            </svg>
                         </div>
                         <p class="text-gray-300 text-sm">
                             Architectural, Civil & Electrical expertise.
@@ -319,47 +359,52 @@ html {
                     </div>
 
                     <div class="flex items-start gap-4">
-                        <div
-                            class="w-8 h-8 flex items-center justify-center rounded-full bg-orange-500/20 text-orange-500">
-                            🌱
+                        <div class="w-6 h-6 text-orange-500">
+                            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path d="M12 2l4 8H8l4-8z" />
+                            </svg>
                         </div>
                         <p class="text-gray-300 text-sm">
-                            Sustainable & eco-friendly construction practices.
+                            Sustainable & eco-conscious construction practices.
                         </p>
                     </div>
 
                     <div class="flex items-start gap-4">
-                        <div
-                            class="w-8 h-8 flex items-center justify-center rounded-full bg-orange-500/20 text-orange-500">
-                            ⭐
+                        <div class="w-6 h-6 text-orange-500">
+                            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7" />
+                            </svg>
                         </div>
                         <p class="text-gray-300 text-sm">
-                            Precision-driven execution & client satisfaction.
+                            Precision-driven execution & quality control.
                         </p>
                     </div>
 
                     <div class="flex items-start gap-4">
-                        <div
-                            class="w-8 h-8 flex items-center justify-center rounded-full bg-orange-500/20 text-orange-500">
-                            ⚡
+                        <div class="w-6 h-6 text-orange-500">
+                            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path d="M13 3v10h8" />
+                            </svg>
                         </div>
                         <p class="text-gray-300 text-sm">
-                            Innovative, functional & cost-efficient designs.
+                            Innovative and cost-efficient project delivery.
                         </p>
                     </div>
 
                 </div>
 
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-5 pt-4">
+                <!-- Minimalist CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-6">
 
+                    <!-- Primary -->
                     <button
-                        class="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(249,115,22,0.6)]">
+                        class="bg-orange-500 text-black font-semibold px-8 py-3 rounded-md hover:bg-orange-600 transition duration-300">
                         Learn More
                     </button>
 
+                    <!-- Minimal Secondary -->
                     <button
-                        class="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
+                        class="text-orange-500 font-semibold px-8 py-3 rounded-md border border-orange-500 hover:bg-orange-500 hover:text-black transition duration-300">
                         Request Quote
                     </button>
 
@@ -368,127 +413,112 @@ html {
             </div>
         </div>
     </section>
-
     <!-- ================= SERVICES ================= -->
     <section id="services" class="relative bg-black text-white py-28 overflow-hidden">
 
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <!-- Subtle Orange Blueprint Grid -->
+        <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(to right, #f97316 1px, transparent 1px),
+               linear-gradient(to bottom, #f97316 1px, transparent 1px);
+               background-size: 50px 50px;">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-6 md:px-12">
 
             <!-- Heading -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-orange-500 mb-4">
+                <h2 class="text-4xl md:text-5xl font-bold text-orange-500 mb-4">
                     Our Services
                 </h2>
                 <p class="text-gray-400 max-w-2xl mx-auto text-lg">
-                    Comprehensive architectural, engineering, and construction solutions
-                    delivered with precision and innovation.
+                    High-performance engineering and construction solutions built with strength, precision, and
+                    reliability.
                 </p>
             </div>
 
             <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-                <!-- 1 -->
+                <!-- CARD 1 -->
                 <div
-                    class="group relative bg-white/5 backdrop-blur-lg border border-orange-500/20 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)]">
-                    <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-orange-500/20 text-orange-500 mb-6 group-hover:bg-orange-500 group-hover:text-black transition">
-                        🏗️</div>
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-orange-400 transition">Architectural Design</h3>
-                    <p class="text-gray-400 text-sm">Creative and functional architectural solutions for residential and
-                        commercial developments.</p>
+                    class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                    <div class="w-12 h-12 text-orange-500 mb-6">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path d="M3 21h18M5 21V7l7-4 7 4v14" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Architectural Design</h3>
+                    <p class="text-gray-400 text-sm">Structural and functional designs engineered for durability.</p>
                 </div>
 
-                <!-- 2 -->
+                <!-- CARD 2 -->
                 <div
-                    class="group relative bg-white/5 backdrop-blur-lg border border-orange-500/20 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)]">
-                    <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-orange-500/20 text-orange-500 mb-6 group-hover:bg-orange-500 group-hover:text-black transition">
-                        ⚙️</div>
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-orange-400 transition">Engineering Services</h3>
-                    <p class="text-gray-400 text-sm">Civil, mechanical, electrical and structural engineering solutions
-                        with precision and compliance.</p>
+                    class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                    <div class="w-12 h-12 text-orange-500 mb-6">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path d="M14.7 6.3l3 3m-9.4 9.4l9.4-9.4M3 21h6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Engineering Services</h3>
+                    <p class="text-gray-400 text-sm">Comprehensive civil, structural, and mechanical expertise.</p>
                 </div>
 
-                <!-- 3 -->
+                <!-- CARD 3 -->
                 <div
-                    class="group relative bg-white/5 backdrop-blur-lg border border-orange-500/20 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)]">
-                    <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-orange-500/20 text-orange-500 mb-6 group-hover:bg-orange-500 group-hover:text-black transition">
-                        🏢</div>
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-orange-400 transition">Construction Management
-                    </h3>
-                    <p class="text-gray-400 text-sm">End-to-end project management ensuring timely delivery, safety, and
-                        quality standards.</p>
+                    class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                    <div class="w-12 h-12 text-orange-500 mb-6">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path d="M3 3h18v18H3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Construction Management</h3>
+                    <p class="text-gray-400 text-sm">Efficient project delivery with strict safety standards.</p>
                 </div>
 
-                <!-- 4 -->
-                <div
-                    class="group relative bg-white/5 backdrop-blur-lg border border-orange-500/20 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)]">
-                    <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-orange-500/20 text-orange-500 mb-6 group-hover:bg-orange-500 group-hover:text-black transition">
-                        📊</div>
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-orange-400 transition">Consulting Services</h3>
-                    <p class="text-gray-400 text-sm">Professional consulting for planning, cost estimation, and
-                        feasibility studies.</p>
-                </div>
+                <!-- Hidden Cards -->
+                <template v-if="showMore">
 
-                <!-- 5 -->
-                <div
-                    class="group relative bg-white/5 backdrop-blur-lg border border-orange-500/20 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)]">
                     <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-orange-500/20 text-orange-500 mb-6 group-hover:bg-orange-500 group-hover:text-black transition">
-                        🌱</div>
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-orange-400 transition">Sustainability Solutions
-                    </h3>
-                    <p class="text-gray-400 text-sm">Eco-friendly construction practices that reduce environmental
-                        impact and energy usage.</p>
-                </div>
+                        class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                        <div class="w-12 h-12 text-orange-500 mb-6">
+                            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path d="M12 8v8m-4-4h8" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-white">Consulting</h3>
+                        <p class="text-gray-400 text-sm">Planning, budgeting, and feasibility expertise.</p>
+                    </div>
 
-                <!-- 6 -->
-                <div
-                    class="group relative bg-white/5 backdrop-blur-lg border border-orange-500/20 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)]">
                     <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-orange-500/20 text-orange-500 mb-6 group-hover:bg-orange-500 group-hover:text-black transition">
-                        🧪</div>
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-orange-400 transition">Technical Services</h3>
-                    <p class="text-gray-400 text-sm">Scientific and technical services including NEC engineering and
-                        compliance solutions.</p>
-                </div>
+                        class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                        <div class="w-12 h-12 text-orange-500 mb-6">
+                            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path d="M12 2l4 8H8l4-8z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-white">Sustainability</h3>
+                        <p class="text-gray-400 text-sm">Green construction and energy-efficient solutions.</p>
+                    </div>
 
-                <!-- 7 -->
-                <div
-                    class="group relative bg-white/5 backdrop-blur-lg border border-orange-500/20 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)]">
                     <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-orange-500/20 text-orange-500 mb-6 group-hover:bg-orange-500 group-hover:text-black transition">
-                        📐</div>
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-orange-400 transition">Project Feasibility</h3>
-                    <p class="text-gray-400 text-sm">In-depth analysis of project viability, budgeting, and strategic
-                        planning for smart investments.</p>
-                </div>
+                        class="bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
+                        <div class="w-12 h-12 text-orange-500 mb-6">
+                            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path d="M9 17v-6h6v6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-white">Interior Solutions</h3>
+                        <p class="text-gray-400 text-sm">Functional finishing and modern construction detailing.</p>
+                    </div>
 
-                <!-- 8 -->
-                <div
-                    class="group relative bg-white/5 backdrop-blur-lg border border-orange-500/20 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)]">
-                    <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-orange-500/20 text-orange-500 mb-6 group-hover:bg-orange-500 group-hover:text-black transition">
-                        🛋️</div>
-                    <h3 class="text-xl font-bold mb-4 group-hover:text-orange-400 transition">Interior Design</h3>
-                    <p class="text-gray-400 text-sm">Modern, functional, and aesthetic interior solutions for
-                        residential and commercial spaces.</p>
-                </div>
+                </template>
 
             </div>
 
-            <!-- Bottom CTA -->
-            <div class="text-center mt-20">
-                <h3 class="text-2xl font-semibold mb-6">
-                    Ready to Start Your Project?
-                </h3>
-
-                <button
-                    class="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(249,115,22,0.6)]">
-                    Request a Free Consultation
+            <!-- View More Button -->
+            <div class="text-center mt-16">
+                <button @click="showMore = !showMore"
+                    class="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-md transition duration-300 shadow-md">
+                    {{ showMore ? 'Show Less' : 'View More Services' }}
                 </button>
             </div>
 
@@ -497,10 +527,9 @@ html {
 
 
     <!-- ================= PROJECTS ================= -->
-    <section id="projects" ref="projectsSection"
-        class="relative bg-black text-white py-24 transition-all duration-700 overflow-hidden">
+    <section id="projects" ref="projectsSection" class="relative bg-black text-white py-24 overflow-hidden">
 
-        <!-- Construction/Engineering SVG background -->
+        <!-- Subtle Engineering Grid Background -->
         <svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice">
             <defs>
@@ -518,100 +547,42 @@ html {
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-orange-500">Our Projects</h2>
                 <p class="text-gray-300 mt-4 max-w-2xl mx-auto">
-                    We take pride in delivering high-quality projects that combine innovation, safety, and durability.
+                    High-quality engineering and construction projects delivered with precision, safety, and innovation.
                 </p>
             </div>
 
             <!-- Projects Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Only show first 3 by default -->
+                <template v-for="(project, index) in projects" :key="index">
+                    <div v-if="index < 3 || showMore"
+                        class="group relative overflow-hidden rounded-2xl cursor-pointer transform transition duration-500 hover:scale-105">
 
-                <!-- Example Project Card -->
-                <div
-                    class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-3xl">
-                    <img src="https://i.pinimg.com/736x/cd/43/59/cd4359eb5b895ce4cda433d55de3d608.jpg"
-                        alt="Commercial Building"
-                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div
-                        class="absolute inset-0 bg-black/50 backdrop-blur-sm bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center px-6 text-center">
-                        <h3 class="text-xl font-bold text-orange-500">Commercial Building</h3>
-                        <p class="text-gray-300 mt-2 text-sm">A modern office complex built with precision and
-                            high-quality materials.</p>
+                        <img :src="project.image" :alt="project.title"
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+
+                        <div
+                            class="absolute inset-0 bg-black/50 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center px-6 text-center">
+
+                            <!-- Minimalist SVG Icon -->
+                            <div class="w-10 h-10 text-orange-500 mb-3">
+                                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                    <path v-html="project.iconPath" />
+                                </svg>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-orange-500">{{ project.title }}</h3>
+                            <p class="text-gray-300 mt-2 text-sm">{{ project.description }}</p>
+                        </div>
                     </div>
-                </div>
-
-                <!-- More Project Cards -->
-                <div
-                    class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-3xl">
-                    <img src="https://i.pinimg.com/1200x/2b/a9/95/2ba995140fe081b838357573ca1232b4.jpg"
-                        alt="Residential Complex"
-                        class="w-full h-64 object-cover bg-center transition-transform duration-500 group-hover:scale-110" />
-                    <div
-                        class="absolute inset-0 bg-black/50 backdrop-blur-sm bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center px-6 text-center">
-                        <h3 class="text-xl font-bold text-orange-500">Residential Complex</h3>
-                        <p class="text-gray-300 mt-2 text-sm">A sustainable residential project designed for comfort and
-                            safety.</p>
-                    </div>
-                </div>
-
-                <div
-                    class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-3xl">
-                    <img src="https://i.pinimg.com/1200x/30/0b/95/300b9516d1f7344d100fe03aba3d2859.jpg"
-                        alt="Industrial Facility"
-                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div
-                        class="absolute inset-0 bg-black/50 backdrop-blur-sm bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center px-6 text-center">
-                        <h3 class="text-xl font-bold text-orange-500">Industrial Facility</h3>
-                        <p class="text-gray-300 mt-2 text-sm">A large-scale industrial building built with robust
-                            engineering standards.</p>
-                    </div>
-                </div>
-
-                <!-- Additional Project Cards for a modern grid -->
-                <div
-                    class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-3xl">
-                    <img src="https://i.pinimg.com/736x/3d/c9/c3/3dc9c31e1703ac5a10a04f740203f6ec.jpg"
-                        alt="Bridge Construction"
-                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div
-                        class="absolute inset-0 bg-black/50 backdrop-blur-sm bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center px-6 text-center">
-                        <h3 class="text-xl font-bold text-orange-500">Bridge Construction</h3>
-                        <p class="text-gray-300 mt-2 text-sm">Engineering precision for large-scale infrastructure
-                            projects.</p>
-                    </div>
-                </div>
-
-                <div
-                    class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-3xl">
-                    <img src="https://i.pinimg.com/1200x/1d/1c/08/1d1c0847c6988acf6b965535398c4f00.jpg" alt="Skyscraper"
-                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div
-                        class="absolute inset-0 bg-black/50 backdrop-blur-sm bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center px-6 text-center">
-                        <h3 class="text-xl font-bold text-orange-500">Skyscraper</h3>
-                        <p class="text-gray-300 mt-2 text-sm">Modern high-rise buildings with innovative design
-                            solutions.</p>
-                    </div>
-                </div>
-
-                <div
-                    class="group relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transform transition duration-500 hover:scale-105 hover:shadow-3xl">
-                    <img src="https://i.pinimg.com/1200x/44/f3/27/44f327b88768402be361969f9e50c603.jpg"
-                        alt="Warehouse Facility"
-                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div
-                        class="absolute inset-0 bg-black/50 backdrop-blur-sm bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center px-6 text-center">
-                        <h3 class="text-xl font-bold text-orange-500">Warehouse Facility</h3>
-                        <p class="text-gray-300 mt-2 text-sm">Efficient industrial spaces built with safety and
-                            durability in mind.</p>
-                    </div>
-                </div>
-
+                </template>
             </div>
 
-            <!-- CTA Button -->
+            <!-- View More Button -->
             <div class="mt-12 text-center">
-                <button
+                <button @click="toggleProjects"
                     class="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-md transition duration-300">
-                    View All Projects
+                    {{ showMore ? 'Show Less' : 'View More Projects' }}
                 </button>
             </div>
 
@@ -619,60 +590,75 @@ html {
     </section>
 
     <!-- ================= CONTACT ================= -->
-    <section id="contact" ref="contactSection" class="bg-black text-white py-20">
-        <div class="max-w-4xl mx-auto px-6 md:px-12">
+    <section id="contact" ref="contactSection" class="relative bg-black text-white py-20">
+
+        <!-- Subtle Engineering Grid Background -->
+        <svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <pattern id="contactGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+                    <path d="M60 0 L0 0 0 60" fill="none" stroke="#FFA500" stroke-width="0.5" />
+                    <circle cx="30" cy="30" r="2" fill="#FFA500" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#contactGrid)" />
+        </svg>
+
+        <div class="relative z-10 max-w-2xl mx-auto px-6 md:px-12">
+
+            <!-- Heading -->
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-orange-500">Get In Touch</h2>
-                <p class="text-gray-300 mt-4 max-w-2xl mx-auto">
+                <p class="text-gray-300 mt-4 max-w-xl mx-auto">
                     Have a project in mind? Reach out to us and let's discuss how we can bring it to life!
                 </p>
             </div>
 
-            <form class="bg-gray-900 p-8 rounded-lg shadow-lg space-y-6">
+            <!-- Contact Form -->
+            <form class="bg-gray-900/80 backdrop-blur-md p-8 rounded-3xl shadow-lg space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <input type="text" placeholder="Your Name"
-                        class="w-full px-4 py-3 rounded-md bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-orange-500 transition"
+                        class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
                         required />
                     <input type="email" placeholder="Your Email"
-                        class="w-full px-4 py-3 rounded-md bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-orange-500 transition"
+                        class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
                         required />
                 </div>
 
                 <input type="text" placeholder="Subject"
-                    class="w-full px-4 py-3 rounded-md bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-orange-500 transition"
+                    class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
                     required />
 
                 <textarea placeholder="Your Message" rows="5"
-                    class="w-full px-4 py-3 rounded-md bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-orange-500 transition"
+                    class="w-full px-4 py-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
                     required></textarea>
 
                 <div class="text-center">
                     <button type="submit"
-                        class="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-md transition duration-300">
+                        class="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-full shadow-md transition duration-300 hover:scale-105">
                         Send Message
                     </button>
                 </div>
             </form>
 
-
         </div>
     </section>
 
-    <section
+    <section id="consultation"
         class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800">
 
-        <!-- Background Image -->
+        <!-- Background Image & Overlay -->
         <div class="absolute inset-0">
             <img src="https://i.pinimg.com/736x/75/de/07/75de0749aa17d31912274fc15ba4545e.jpg"
-                class="w-full h-full object-cover opacity-30" />
+                class="w-full h-full object-cover opacity-20" />
             <div class="absolute inset-0 bg-black/70"></div>
         </div>
 
-        <!-- Subtle Professional Glow -->
+        <!-- Soft Engineering Glow -->
         <div class="absolute top-24 left-24 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-24 right-24 w-80 h-80 bg-gray-600/10 rounded-full blur-3xl"></div>
 
-        <!-- Content -->
+        <!-- Content Grid -->
         <div class="relative z-10 max-w-7xl w-full px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center">
 
             <!-- Text Section -->
@@ -684,21 +670,19 @@ html {
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight text-white">
-                    Precision Engineering <br>
-                    <span class="text-orange-400">
-                        Modern Solutions
-                    </span>
+                    Free Consultation <br>
+                    <span class="text-orange-400">Precision Engineering Solutions</span>
                 </h1>
 
                 <p class="text-gray-300 text-lg max-w-xl mx-auto md:mx-0">
-                    Delivering high-quality engineering and construction solutions
-                    with innovation, safety, and reliability at every stage.
+                    Schedule a free consultation with our experts to discuss your construction or engineering project.
+                    We provide innovative, safe, and reliable solutions tailored to your needs.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <a href="#contact"
-                        class="px-8 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold shadow-md transition duration-300">
-                        Get in Touch
+                        class="px-8 py-3 rounded-lg bg-white text-black font-semibold shadow-md hover:bg-gray-200 transition duration-300">
+                        Request Consultation
                     </a>
 
                     <a href="#projects"
@@ -713,14 +697,12 @@ html {
 
             </div>
 
-            <!-- Image Section -->
-            <div class="relative flex justify-center">
-
-                <!-- Soft glow behind image -->
-                <div class="absolute w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
-
-                <img :src="maam" alt="Engineering Construction"
-                    class="relative w-full max-w-md rounded-2xl shadow-xl transition duration-300 ease-in-out hover:scale-105">
+            <!-- Map Section -->
+            <div class="relative w-full h-96 md:h-[480px] rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.540561827117!2d125.8169435!3d7.4508667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f953b3b7d922c3%3A0x21927934c5a5b49c!2sRUBIKNOWS%20Engineering%20and%20Construction!5e0!3m2!1sen!2sph!4v1708959912345!5m2!1sen!2sph"
+                    class="w-full h-full border-0" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
         </div>

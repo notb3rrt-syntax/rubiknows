@@ -15,17 +15,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
-}
 
-/* When active */
-.reveal-active {
-  opacity: 1;
-  transform: translateY(0);
-}
 .body{
   body {
   font-family: 'Montserrat', sans-serif;

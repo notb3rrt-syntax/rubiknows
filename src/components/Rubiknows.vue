@@ -397,7 +397,7 @@ html {
             <div class="md:w-1/2">
                 <img src="https://i.pinimg.com/736x/0b/9c/5e/0b9c5eecc4df2eb1ed1db6aec9537a53.jpg"
                     alt="Construction Work"
-                    class="w-full max-w-lg mx-auto rounded-2xl shadow-xl transition duration-500 hover:scale-105" />
+                    class="w-full max-w-lg mx-auto rounded-2xl shadow-xl " />
             </div>
 
             <!-- Text Content -->
@@ -667,15 +667,15 @@ html {
 
                         <!-- Close Button -->
                         <button @click="closeModal"
-                            class="absolute top-4 right-4 text-orange-500 text-3xl hover:text-white transition z-50">&times;</button>
+                            class="absolute top-3 right-2 text-orange-500 bg-orange-300 rounded-full py-1 px-2 font-bold text-4xl hover:text-white transition z-50">&times;</button>
 
                         <!-- Back / Next Buttons -->
                         <button @click="prevProject"
-                            class="absolute left-4 top-1/2 transform -translate-y-1/2 text-orange-500 text-4xl hover:text-white transition z-50">
+                            class="absolute left-4 top-1/2 transform -translate-y-1/2 font-bold text-orange-500 text-6xl hover:text-white transition z-50">
                             &#8592;
                         </button>
                         <button @click="nextProject"
-                            class="absolute right-4 top-1/2 transform -translate-y-1/2 text-orange-500 text-4xl hover:text-white transition z-50">
+                            class="absolute right-4 top-1/2 transform -translate-y-1/2 font-bold text-orange-500 text-6xl hover:text-white transition z-50">
                             &#8594;
                         </button>
 

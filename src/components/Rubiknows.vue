@@ -12,6 +12,7 @@ export default {
             animateProjects: false,
             animateContact: false,
             img: '../logo.png',
+            maam: '../maam.png',
         };
     },
     mounted() {
@@ -68,13 +69,56 @@ export default {
 html {
     scroll-behavior: smooth;
 }
-  @keyframes spin-slow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-            animation: spin-slow 40s linear infinite;
-        }
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 40s linear infinite;
+}
+
+@keyframes spin-slow {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 8s infinite ease-in-out;
+}
+
+@keyframes pulse-slow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 6s infinite ease-in-out;
+}
 </style>
 
 <template>
@@ -95,19 +139,22 @@ html {
                             class="cursor-pointer absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
                     </a></li>
 
-                <li><a href="#about" class="cursor-pointer relative group hover:text-orange-500 transition duration-300">
+                <li><a href="#about"
+                        class="cursor-pointer relative group hover:text-orange-500 transition duration-300">
                         About
                         <span
                             class="cursor-pointer absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
                     </a></li>
 
-                <li><a href="#services" class="cursor-pointer relative group hover:text-orange-500 transition duration-300">
+                <li><a href="#services"
+                        class="cursor-pointer relative group hover:text-orange-500 transition duration-300">
                         Services
                         <span
                             class="cursor-pointer absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
                     </a></li>
 
-                <li><a href="#projects" class="cursor-pointer relative group hover:text-orange-500 transition duration-300">
+                <li><a href="#projects"
+                        class="cursor-pointer relative group hover:text-orange-500 transition duration-300">
                         Projects
                         <span
                             class="absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
@@ -150,7 +197,7 @@ html {
 
             <button
                 class="w-full bg-orange-500 hover:bg-orange-600 text-black font-semibold px-5 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(249,115,22,0.6)]">
-                 Start Your Project
+                Start Your Project
             </button>
         </div>
     </header>
@@ -164,8 +211,8 @@ html {
         </div>
         <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/90"></div>
 
-       <img :src="img" alt=""
-    class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 md:w-48 lg:w-56 opacity-80 pointer-events-none" />
+        <img :src="img" alt=""
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 md:w-48 lg:w-56 opacity-80 pointer-events-none" />
         <div class="relative max-w-7xl mx-auto px-6 py-28 md:py-40 text-center mt-10">
             <p ref="heroLabel" id="hero-label"
                 :class="animateHeroLabel ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'"
@@ -238,7 +285,8 @@ html {
 
             <!-- Image -->
             <div class="md:w-1/2">
-                <img src="https://i.pinimg.com/736x/0b/9c/5e/0b9c5eecc4df2eb1ed1db6aec9537a53.jpg" alt="Construction Work"
+                <img src="https://i.pinimg.com/736x/0b/9c/5e/0b9c5eecc4df2eb1ed1db6aec9537a53.jpg"
+                    alt="Construction Work"
                     class="w-full max-w-lg mx-auto rounded-3xl shadow-2xl transition duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)]" />
             </div>
 
@@ -266,7 +314,7 @@ html {
                             ✓
                         </div>
                         <p class="text-gray-300 text-sm">
-                            Architectural, Civil, Mechanical & Electrical expertise.
+                            Architectural, Civil & Electrical expertise.
                         </p>
                     </div>
 
@@ -440,7 +488,7 @@ html {
 
                 <button
                     class="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(249,115,22,0.6)]">
-                     Request a Free Consultation
+                    Request a Free Consultation
                 </button>
             </div>
 
@@ -609,10 +657,80 @@ html {
 
         </div>
     </section>
+
+    <section
+        class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800">
+
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="https://i.pinimg.com/736x/75/de/07/75de0749aa17d31912274fc15ba4545e.jpg"
+                class="w-full h-full object-cover opacity-30" />
+            <div class="absolute inset-0 bg-black/70"></div>
+        </div>
+
+        <!-- Subtle Professional Glow -->
+        <div class="absolute top-24 left-24 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-24 right-24 w-80 h-80 bg-gray-600/10 rounded-full blur-3xl"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl w-full px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center">
+
+            <!-- Text Section -->
+            <div class="space-y-8 text-center md:text-left">
+
+                <div
+                    class="inline-block px-4 py-1 text-sm tracking-widest text-orange-400 uppercase bg-orange-500/10 rounded-full backdrop-blur-sm">
+                    Engineering Excellence
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight text-white">
+                    Precision Engineering <br>
+                    <span class="text-orange-400">
+                        Modern Solutions
+                    </span>
+                </h1>
+
+                <p class="text-gray-300 text-lg max-w-xl mx-auto md:mx-0">
+                    Delivering high-quality engineering and construction solutions
+                    with innovation, safety, and reliability at every stage.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact"
+                        class="px-8 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold shadow-md transition duration-300">
+                        Get in Touch
+                    </a>
+
+                    <a href="#projects"
+                        class="px-8 py-3 rounded-lg border border-gray-600 text-gray-300 hover:bg-white/5 transition duration-300">
+                        View Projects
+                    </a>
+                </div>
+
+                <p class="text-sm text-gray-400 pt-4">
+                    Founded by <span class="text-white font-medium">Ruvelyn Robinos</span>
+                </p>
+
+            </div>
+
+            <!-- Image Section -->
+            <div class="relative flex justify-center">
+
+                <!-- Soft glow behind image -->
+                <div class="absolute w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
+
+                <img :src="maam" alt="Engineering Construction"
+                    class="relative w-full max-w-md rounded-2xl shadow-xl transition duration-300 ease-in-out hover:scale-105">
+            </div>
+
+        </div>
+    </section>
+    <!-- Add this to your Tailwind config if using Tailwind JIT or arbitrary values -->
+
     <footer class="bg-black text-gray-300 py-16 relative overflow-hidden">
 
         <!-- Optional subtle SVG background pattern -->
-        <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg"
+        <svg class="absolute inset-0 w-full h-full opacity-5 pointer-events-none" xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice">
             <defs>
                 <pattern id="footerGrid" width="50" height="50" patternUnits="userSpaceOnUse">
@@ -632,19 +750,20 @@ html {
                     safety.
                 </p>
                 <div class="flex space-x-4 mt-2">
-                    <a href="#" class="hover:text-orange-500 transition">
+                    <!-- Social Icons -->
+                    <a href="#" class="hover:text-orange-500 transition-transform transform hover:scale-110">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M24 4.56v15.92c0 .55-.45 1-1 1h-22c-.55 0-1-.45-1-1v-15.92c0-.55.45-1 1-1h22c.55 0 1 .45 1 1zm-4.5 0h-1.5v1.5h1.5v-1.5zm-2 0h-1.5v1.5h1.5v-1.5zm-2 0h-1.5v1.5h1.5v-1.5zm4.5 2.5h-14v14h14v-14z" />
                         </svg>
                     </a>
-                    <a href="#" class="hover:text-orange-500 transition">
+                    <a href="#" class="hover:text-orange-500 transition-transform transform hover:scale-110">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M24 4.5v15c0 .828-.672 1.5-1.5 1.5h-21c-.828 0-1.5-.672-1.5-1.5v-15c0-.828.672-1.5 1.5-1.5h21c.828 0 1.5.672 1.5 1.5zm-9.375 10.875v-5.25l4.5 2.625-4.5 2.625zm9.375-10.875h-21v15h21v-15z" />
                         </svg>
                     </a>
-                    <a href="#" class="hover:text-orange-500 transition">
+                    <a href="#" class="hover:text-orange-500 transition-transform transform hover:scale-110">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.956-2.178-1.555-3.594-1.555-2.719 0-4.924 2.206-4.924 4.924 0 .386.044.762.127 1.124-4.092-.205-7.725-2.166-10.157-5.144-.425.73-.668 1.577-.668 2.476 0 1.708.87 3.216 2.188 4.099-.807-.026-1.566-.247-2.229-.616v.062c0 2.385 1.697 4.374 3.95 4.827-.413.112-.849.172-1.296.172-.317 0-.626-.031-.928-.088.627 1.956 2.444 3.379 4.6 3.418-1.68 1.316-3.808 2.101-6.115 2.101-.398 0-.79-.023-1.177-.069 2.179 1.397 4.768 2.211 7.548 2.211 9.054 0 14.01-7.5 14.01-14.01 0-.213-.005-.425-.014-.636.961-.693 1.797-1.562 2.457-2.549z" />
@@ -657,11 +776,11 @@ html {
             <div class="space-y-4">
                 <h3 class="text-xl font-bold text-orange-500">Quick Links</h3>
                 <ul class="space-y-2 text-gray-400 text-sm">
-                    <li><a href="#hero" class=" cursor-pointer hover:text-orange-500 transition">Home</a></li>
-                    <li><a href="#about" class=" cursor-pointer hover:text-orange-500 transition">About</a></li>
-                    <li><a href="#services" class=" cursor-pointer hover:text-orange-500 transition">Services</a></li>
-                    <li><a href="#projects" class=" cursor-pointer hover:text-orange-500 transition">Projects</a></li>
-                    <li><a href="#contact" class=" cursor-pointer hover:text-orange-500 transition">Contact</a></li>
+                    <li><a href="#hero" class="hover:text-orange-500 transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-orange-500 transition">About</a></li>
+                    <li><a href="#services" class="hover:text-orange-500 transition">Services</a></li>
+                    <li><a href="#projects" class="hover:text-orange-500 transition">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-orange-500 transition">Contact</a></li>
                 </ul>
             </div>
 
@@ -683,17 +802,12 @@ html {
         </div>
 
         <!-- Footer Bottom -->
-        <div class="mt-12 border-t border-orange-500/30 pt-6 text-center text-gray-500 text-sm">
-            &copy; 2026 Rubiknows Engineering & Construction. All rights reserved.
-        </div>
-        <div style="text-align: center; font-size: 14px; color: #6B7280; margin-top: 20px;">
-            Copyright:
-        </div>
-        <div style="text-align: center; font-size: 14px; color: #6B7280; margin-top: 5px;">
-            <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer"
-                style="color: #F97316; text-decoration: none;">
-                Pinterest
-            </a>
+        <div class="mt-12 border-t border-orange-500/30 pt-6 text-center text-gray-500 text-sm space-y-1">
+            <p>&copy; 2026 Rubiknows Engineering & Construction. All rights reserved.</p>
+            <p>
+                <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer"
+                    class="text-orange-500 hover:text-orange-400 transition">Pinterest</a>
+            </p>
         </div>
     </footer>
 </template>

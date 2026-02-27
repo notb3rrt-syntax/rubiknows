@@ -290,9 +290,9 @@ html {
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-center">
-                <a href="#contact"
+                <a href="#consultation"
                     class="px-8 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold shadow-md transition duration-300">
-                    Get in Touch
+                    Get free consultaion
                 </a>
 
                 <a href="#projects"
@@ -691,9 +691,7 @@ html {
                     </a>
                 </div>
 
-                <p class="text-sm text-gray-400 pt-4">
-                    Founded by <span class="text-white font-medium">Ruvelyn Robinos</span>
-                </p>
+                
 
             </div>
 

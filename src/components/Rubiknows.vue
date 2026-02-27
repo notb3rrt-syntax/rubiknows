@@ -52,10 +52,50 @@ export default {
                     image: "https://i.pinimg.com/1200x/44/f3/27/44f327b88768402be361969f9e50c603.jpg",
                     iconPath: "M12 4v16"
                 }
+            ],
+            modalProject: null,
+            projects: [
+                {
+                    image: 'https://i.pinimg.com/736x/cd/43/59/cd4359eb5b895ce4cda433d55de3d608.jpg',
+                    title: 'Commercial Building',
+                    description: 'A modern office complex built with precision and high-quality materials.',
+                    iconPath: 'M3 3h18v18H3V3z'
+                },
+                {
+                    image: 'https://i.pinimg.com/1200x/2b/a9/95/2ba995140fe081b838357573ca1232b4.jpg',
+                    title: 'Residential Complex',
+                    description: 'A sustainable residential project designed for comfort and safety.',
+                    iconPath: 'M12 2l9 7v13H3V9l9-7z'
+                },
+                {
+                    image: 'https://i.pinimg.com/1200x/30/0b/95/300b9516d1f7344d100fe03aba3d2859.jpg',
+                    title: 'Industrial Facility',
+                    description: 'A large-scale industrial building built with robust engineering standards.',
+                    iconPath: 'M4 4h16v16H4V4z'
+                },
+                {
+                    image: 'https://i.pinimg.com/736x/3d/c9/c3/3dc9c31e1703ac5a10a04f740203f6ec.jpg',
+                    title: 'Bridge Construction',
+                    description: 'Engineering precision for large-scale infrastructure projects.',
+                    iconPath: 'M2 12h20M12 2v20'
+                },
+                {
+                    image: 'https://i.pinimg.com/1200x/1d/1c/08/1d1c0847c6988acf6b965535398c4f00.jpg',
+                    title: 'Skyscraper',
+                    description: 'Modern high-rise buildings with innovative design solutions.',
+                    iconPath: 'M6 22V2h12v20H6z'
+                },
+                {
+                    image: 'https://i.pinimg.com/1200x/44/f3/27/44f327b88768402be361969f9e50c603.jpg',
+                    title: 'Warehouse Facility',
+                    description: 'Efficient industrial spaces built with safety and durability in mind.',
+                    iconPath: 'M3 6h18v12H3V6z'
+                },
             ]
-
         };
     },
+
+
     mounted() {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -106,8 +146,38 @@ export default {
     methods: {
         toggleProjects() {
             this.showMore = !this.showMore;
+        },
+        toggleProjects() {
+            this.showMore = !this.showMore;
+        },
+        openModal(project) {
+            this.modalProject = project;
+            this.modalIndex = this.projects.indexOf(project); // store index
+            document.body.style.overflow = 'hidden';
+        },
+        closeModal() {
+            this.modalProject = null;
+            this.modalIndex = null;
+            document.body.style.overflow = '';
+        },
+        prevProject() {
+            if (this.modalIndex > 0) {
+                this.modalIndex--;
+            } else {
+                this.modalIndex = this.projects.length - 1; // loop to last
+            }
+            this.modalProject = this.projects[this.modalIndex];
+        },
+        nextProject() {
+            if (this.modalIndex < this.projects.length - 1) {
+                this.modalIndex++;
+            } else {
+                this.modalIndex = 0; // loop to first
+            }
+            this.modalProject = this.projects[this.modalIndex];
         }
     }
+
 }
 
 </script>
@@ -517,7 +587,7 @@ html {
             <!-- View More Button -->
             <div class="text-center mt-16">
                 <button @click="showMore = !showMore"
-                    class="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-md transition duration-300 shadow-md">
+                    class=" cursor-pointer bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-md transition duration-300 shadow-md">
                     {{ showMore ? 'Show Less' : 'View More Services' }}
                 </button>
             </div>
@@ -553,10 +623,10 @@ html {
 
             <!-- Projects Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Only show first 3 by default -->
                 <template v-for="(project, index) in projects" :key="index">
                     <div v-if="index < 3 || showMore"
-                        class="group relative overflow-hidden rounded-2xl cursor-pointer transform transition duration-500 hover:scale-105">
+                        class="group relative overflow-hidden rounded-2xl cursor-pointer transform transition duration-500 hover:scale-105"
+                        @click="openModal(project)">
 
                         <img :src="project.image" :alt="project.title"
                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -578,13 +648,63 @@ html {
                 </template>
             </div>
 
-            <!-- View More Button -->
+            <!-- Show More Button -->
             <div class="mt-12 text-center">
                 <button @click="toggleProjects"
-                    class="bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-md transition duration-300">
+                    class="cursor-pointer bg-orange-500 hover:bg-orange-600 text-black font-semibold px-8 py-3 rounded-md transition duration-300">
                     {{ showMore ? 'Show Less' : 'View More Projects' }}
                 </button>
             </div>
+
+            <!-- Modal / Lightbox -->
+            <!-- Modal / Lightbox -->
+            <transition name="fade-scale">
+                <div v-if="modalProject"
+                    class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm">
+
+                    <div
+                        class="relative max-w-4xl w-full bg-black rounded-xl overflow-hidden transition-all duration-500 scale-95 border border-orange-500/30">
+
+                        <!-- Close Button -->
+                        <button @click="closeModal"
+                            class="absolute top-4 right-4 text-orange-500 text-3xl hover:text-white transition z-50">&times;</button>
+
+                        <!-- Back / Next Buttons -->
+                        <button @click="prevProject"
+                            class="absolute left-4 top-1/2 transform -translate-y-1/2 text-orange-500 text-4xl hover:text-white transition z-50">
+                            &#8592;
+                        </button>
+                        <button @click="nextProject"
+                            class="absolute right-4 top-1/2 transform -translate-y-1/2 text-orange-500 text-4xl hover:text-white transition z-50">
+                            &#8594;
+                        </button>
+
+                        <!-- Modal Image -->
+                        <div class="relative w-full h-96 md:h-[28rem] overflow-hidden">
+                            <img :src="modalProject.image" :alt="modalProject.title"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+
+                            <!-- Subtle Overlay Grid for Engineering Theme -->
+                            <svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <pattern id="modalGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                        <path d="M40 0 L0 0 0 40" fill="none" stroke="#FFA500" stroke-width="0.3" />
+                                        <circle cx="20" cy="20" r="1.5" fill="#FFA500" />
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#modalGrid)" />
+                            </svg>
+                        </div>
+
+                        <!-- Modal Text -->
+                        <div class="p-6 text-center bg-black/70 backdrop-blur-sm">
+                            <h3 class="text-2xl md:text-3xl font-bold text-orange-500">{{ modalProject.title }}</h3>
+                            <p class="text-gray-300 mt-2 text-sm md:text-base">{{ modalProject.description }}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </transition>
 
         </div>
     </section>
@@ -691,7 +811,7 @@ html {
                     </a>
                 </div>
 
-                
+
 
             </div>
 

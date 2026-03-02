@@ -396,8 +396,7 @@ html {
             <!-- Image -->
             <div class="md:w-1/2">
                 <img src="https://i.pinimg.com/736x/0b/9c/5e/0b9c5eecc4df2eb1ed1db6aec9537a53.jpg"
-                    alt="Construction Work"
-                    class="w-full max-w-lg mx-auto rounded-2xl shadow-xl " />
+                    alt="Construction Work" class="w-full max-w-lg mx-auto rounded-2xl shadow-xl " />
             </div>
 
             <!-- Text Content -->
@@ -569,7 +568,7 @@ html {
                         <p class="text-gray-400 text-sm">Green construction and energy-efficient solutions.</p>
                     </div>
 
-                    <div 
+                    <div
                         class=" cursor-pointer bg-orange-500/5 rounded-2xl p-8 transition duration-300 hover:bg-orange-500/10 hover:-translate-y-1">
                         <div class="w-12 h-12 text-orange-500 mb-6">
                             <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -827,9 +826,9 @@ html {
     </section>
     <!-- Add this to your Tailwind config if using Tailwind JIT or arbitrary values -->
 
-    <footer class="bg-black text-gray-300 py-16 relative overflow-hidden">
+    <footer class="bg-black text-gray-300 py-10 md:py-16 relative overflow-hidden">
 
-        <!-- Optional subtle SVG background pattern -->
+        <!-- Subtle SVG background -->
         <svg class="absolute inset-0 w-full h-full opacity-5 pointer-events-none" xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMidYMid slice">
             <defs>
@@ -840,31 +839,37 @@ html {
             <rect width="100%" height="100%" fill="url(#footerGrid)" />
         </svg>
 
-        <div class="relative max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="relative max-w-7xl mx-auto px-5 md:px-12 
+                grid grid-cols-1 md:grid-cols-3 
+                gap-8 md:gap-12 text-center md:text-left">
 
-            <!-- About / Branding -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-orange-500">Rubiknows Engineering & Construction</h3>
-                <p class="text-gray-400 text-sm">
-                    Delivering high-quality engineering and construction solutions with precision, innovation, and
-                    safety.
+            <!-- About -->
+            <div class="space-y-3 md:space-y-4">
+                <h3 class="text-lg md:text-xl font-bold text-orange-500">
+                    Rubiknows Engineering & Construction
+                </h3>
+
+                <p class="text-gray-400 text-xs md:text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
+                    Delivering high-quality engineering and construction solutions with precision,
+                    innovation, and safety.
                 </p>
-                <div class="flex space-x-4 mt-2">
+
+                <div class="flex justify-center md:justify-start space-x-4 pt-1">
                     <!-- Social Icons -->
-                    <a href="#" class="hover:text-orange-500 transition-transform transform hover:scale-110">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <a href="#" class="hover:text-orange-500 transition transform hover:scale-110">
+                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M24 4.56v15.92c0 .55-.45 1-1 1h-22c-.55 0-1-.45-1-1v-15.92c0-.55.45-1 1-1h22c.55 0 1 .45 1 1zm-4.5 0h-1.5v1.5h1.5v-1.5zm-2 0h-1.5v1.5h1.5v-1.5zm-2 0h-1.5v1.5h1.5v-1.5zm4.5 2.5h-14v14h14v-14z" />
                         </svg>
                     </a>
-                    <a href="#" class="hover:text-orange-500 transition-transform transform hover:scale-110">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <a href="#" class="hover:text-orange-500 transition transform hover:scale-110">
+                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M24 4.5v15c0 .828-.672 1.5-1.5 1.5h-21c-.828 0-1.5-.672-1.5-1.5v-15c0-.828.672-1.5 1.5-1.5h21c.828 0 1.5.672 1.5 1.5zm-9.375 10.875v-5.25l4.5 2.625-4.5 2.625zm9.375-10.875h-21v15h21v-15z" />
                         </svg>
                     </a>
-                    <a href="#" class="hover:text-orange-500 transition-transform transform hover:scale-110">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <a href="#" class="hover:text-orange-500 transition transform hover:scale-110">
+                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.956-2.178-1.555-3.594-1.555-2.719 0-4.924 2.206-4.924 4.924 0 .386.044.762.127 1.124-4.092-.205-7.725-2.166-10.157-5.144-.425.73-.668 1.577-.668 2.476 0 1.708.87 3.216 2.188 4.099-.807-.026-1.566-.247-2.229-.616v.062c0 2.385 1.697 4.374 3.95 4.827-.413.112-.849.172-1.296.172-.317 0-.626-.031-.928-.088.627 1.956 2.444 3.379 4.6 3.418-1.68 1.316-3.808 2.101-6.115 2.101-.398 0-.79-.023-1.177-.069 2.179 1.397 4.768 2.211 7.548 2.211 9.054 0 14.01-7.5 14.01-14.01 0-.213-.005-.425-.014-.636.961-.693 1.797-1.562 2.457-2.549z" />
                         </svg>
@@ -873,9 +878,9 @@ html {
             </div>
 
             <!-- Quick Links -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-orange-500">Quick Links</h3>
-                <ul class="space-y-2 text-gray-400 text-sm">
+            <div class="space-y-3 md:space-y-4">
+                <h3 class="text-lg md:text-xl font-bold text-orange-500">Quick Links</h3>
+                <ul class="space-y-1 md:space-y-2 text-gray-400 text-xs md:text-sm">
                     <li><a href="#hero" class="hover:text-orange-500 transition">Home</a></li>
                     <li><a href="#about" class="hover:text-orange-500 transition">About</a></li>
                     <li><a href="#services" class="hover:text-orange-500 transition">Services</a></li>
@@ -884,30 +889,31 @@ html {
                 </ul>
             </div>
 
-            <!-- Contact Info -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-orange-500">Contact Us</h3>
-                <p class="text-gray-400 text-sm">
-                    <span class="font-semibold text-orange-500">Email:</span> rubiknows.ph@gmail.com
-                </p>
-                <p class="text-gray-400 text-sm">
-                    <span class="font-semibold text-orange-500">Phone:</span> +639564073918
-                </p>
-                <p class="text-gray-400 text-sm">
-                    <span class="font-semibold text-orange-500">Address:</span> Stall 6C, JFM Building, City Arcade,
-                    Barangay Apokon Tagum, Davao Del Norte, Philippines
-                </p>
+            <!-- Contact -->
+            <div class="space-y-3 md:space-y-4">
+                <h3 class="text-lg md:text-xl font-bold text-orange-500">Contact</h3>
+
+                <div class="text-gray-400 text-xs md:text-sm space-y-1 leading-relaxed">
+                    <p><span class="text-orange-500 font-medium">Email:</span> rubiknows.ph@gmail.com</p>
+                    <p><span class="text-orange-500 font-medium">Phone:</span> +63 956 407 3918</p>
+                    <p class="max-w-xs mx-auto md:mx-0">
+                        <span class="text-orange-500 font-medium">Address:</span>
+                        Barangay Apokon, Tagum City, Davao del Norte
+                    </p>
+                </div>
             </div>
 
         </div>
 
-        <!-- Footer Bottom -->
-        <div class="mt-12 border-t border-orange-500/30 pt-6 text-center text-gray-500 text-sm space-y-1">
+        <!-- Bottom -->
+        <div class="mt-8 md:mt-12 border-t border-orange-500/30 pt-4 md:pt-6 
+                text-center text-gray-500 text-xs md:text-sm space-y-1">
             <p>&copy; 2026 Rubiknows Engineering & Construction. All rights reserved.</p>
-            <p>
-                <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer"
-                    class="text-orange-500 hover:text-orange-400 transition">Pinterest</a>
-            </p>
+            <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer"
+                class="text-orange-500 hover:text-orange-400 transition">
+                Pinterest
+            </a>
         </div>
+
     </footer>
 </template>
